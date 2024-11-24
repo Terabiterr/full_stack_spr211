@@ -1,0 +1,17 @@
+<div>
+  <h1>users</h1>
+  <div>
+    <input type="number" [(ngModel)]="newUser.id" placeholder="id">
+    <input type="text" [(ngModel)]="newUser.name" placeholder="name">
+    <input type="text" [(ngModel)]="newUser.email" placeholder="email">
+    <input type="text" [(ngModel)]="newUser.age" placeholder="age">
+    <button (click)="addUser()">add user</button>
+  </div>
+  <ul>
+    <li *ngFor="let u of users">
+      id: {{ u.id }}, name: {{ u.name }}, email: {{ u.email }}, age: {{ u.age }}
+      <button (click)="updateUser(u.id)">update</button>
+      <button (click)="deleteUser(u.id)">delete</button>
+    </li>
+  </ul>
+</div>
